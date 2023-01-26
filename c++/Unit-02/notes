@@ -1,0 +1,257 @@
+Class and Object:
+
+    class
+    {
+        Access Speicifier       {public private protected, default}
+        data members;           {attributes}
+        member function(){}    {functions or behaviours}
+    }
+    
+    class is a user defined data type
+    data members and member functions can be accessed using any object(instance) of the class
+
+    class FirstClass
+    {
+        public:
+        string name;
+
+        void printname()
+        {
+            cout << name << endl;
+        }
+    };
+
+int main()
+{
+    FirstClass obj1;
+    obj1.name="Rakshit";
+    
+    obj1.printname();
+    return 0;
+}
+
+
+    Access Specifier:
+        private:
+            a & b can't be accessed outside the class in anyway
+
+        protected:
+            a & b can't be accessed outsite the class, however the can be accessed in inherited class.
+        
+        public:
+            a & b can be accessed outsite the class
+
+
+
+        xyz.cpp --> class FirstCalss --> (a) Data members
+                                     --> (b) Member functions
+
+
+    Scope resolution operator(SRO):
+        int x;
+        int main()
+        {
+            int x =10;
+            cout << x << endl;
+            cout << ::x << endl;
+        }
+
+    Static variables:
+
+        class Test
+        {
+            static int x;
+            void func(int x)
+            {
+                cout << Test::x << endl;
+                cout << x << endl;
+            }
+        };
+            
+        //
+
+        int Test::x = 1;
+        int Test::y = 2;
+
+        int main()
+        {
+            Test obj;
+            int x = 3;
+            ob.func(x);
+            return 0;
+        }
+
+
+    Nested Class:
+
+        class outside
+        {
+            public:
+            int x;
+            class inside
+            {
+                public:
+                    int x;
+                    static int y;
+                    int foo();
+            };
+            int outside::inside::y = 5;
+        };
+
+        int main()
+        {
+            outsite A;
+            outsite::inside::B;
+        }
+            
+        
+    Inheritance:
+
+        class A
+        {
+            protected:
+                int x;
+            public:
+                A(){x=10;}
+
+        };
+
+        class B
+        {
+            protected:
+                int x;
+            public:
+                B(){x=20;}  --> constructors
+
+        };
+
+        class C:public A, public B
+        {
+            public:
+                void func()
+                {
+                    cout << "A's x is" << A::x;
+                    cout << "\nB's x is" << B::x;
+                }
+        };
+
+        int main()
+        {
+            C.c;
+            c.func();
+            return 0;
+        }
+
+    Constructor:
+        * Constructr is special methodm which is automaticall called when an object of ta class is created.
+        * Constructor uses the same name as class name
+        * It is always public and does not have any return value/type.
+
+        class MyClass
+        {
+            public:
+                MyClass()  --> Default constructor,(no parameters)
+                {
+                    cout << "Hello World";
+                }
+        };
+
+        int main()
+        {
+            MyClass myObj;
+            return 0;
+        }
+
+        Types of constructors:
+            1. default
+                Class_Name(){}
+                
+                Example:
+
+                    class MyClass
+                    {
+                        public:
+                            MyClass()  --> Default constructor,(no parameters)
+                            {
+                                cout << "Hello World";
+                            }
+                    };
+                    int main()
+                    {
+                        MyClass myObj;
+                        return 0;
+                    }
+
+
+            2. parameterized
+                Class_Name(Parameters){}
+
+                Example:
+                Class Point{
+                    private:
+                        int x,y;
+
+                    public:
+                        Point(int x1, int y1)
+                        {
+                            x = x1;
+                            y = y1;
+                        }
+
+                        int getX()
+                            return x;
+
+                        int getY()
+                            return y;
+
+                        int setX(int x1){
+                            this.x = x1;
+                        }
+                };
+
+                int main(){
+                    Point p1(10,15);
+                    cout << "p1.x=" << p1.getX() << ",p1.y = " << p1.getY() << endl; 
+                    return 0;
+                }
+
+            3. copy
+
+                Class_Name(const ClassName old_obj){}
+
+                Example:
+                    
+                class Sample{
+                    private:
+                        int a;
+                        int b;
+                        
+                    public:                   
+                        Sample(int a, int b)
+                        {
+                            this.a = a;
+                            this.b = b;
+                        }
+
+                        int add()
+                        {
+                            return (a+b);
+                        }
+                };
+
+
+                Sample(Sample &old_obj){
+                    this.a  = a;
+                    this.b = b;
+                }
+
+                int main(){
+                    Sample s1(10,30);
+                    Sample s2(s1);
+                    cout << s2.add() << endl;
+                }
+
+                    
+
+
+

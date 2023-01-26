@@ -1,0 +1,199 @@
+OPERATORS:
+    
+    Statement -> x = y+z : 
+        x,y,z -> operands
+        '+' -> arthematic operator
+        '=' -> assingment operator
+
+    Types Of Operators:
+        1. Arthimatic Operators
+            a+b
+            a-b
+            a*b
+            a/b
+
+        2. Remainder Operators
+            a%b
+
+        3. Arithmetic Assingment Operators
+        4. Increment & Decrement Operators -> (prefix & postfix)
+        5. Logical Operators
+        6. Conditional Operators -> (if else statement)
+        7. Bitwise Operators
+        8. Relational Operators
+
+
+        3. Increment(++) and Decrement(--) Operators
+            Increment
+                a++ -> postfix Ex: a = a+1
+                ++a -> prefix
+
+            Decrement
+                a-- -> postfix Ex: a = a-1
+                --a -> prefix
+
+
+        4. Logical Operators and Bitwise Operators
+            Logical Operators
+                &&, ||, 
+
+            Bitwise Operators
+                Regardless the value of the first expression all the
+                ,expression will be evaluated in case of bitwise operators
+                &, |, 
+
+
+        5. Conditional Operators
+            Ternary - > max = (a>b)? a:b
+
+
+        6. Relational Operators
+            >, <, >=, <= --> true or false
+
+
+Difference between expression and statement:
+    Expressions are evaluated to some value while statements have no evaluated values
+    Every expression can become a statement if a semicolon in appended
+
+    Example:
+        max = (n1>n2)? n1: n2; --> statement
+            (n1>n2) --> expression
+
+        int a = a+ b*2 +c; --> statement
+            a+ b*2 +c --> expression
+
+
+Arrays:
+    
+    Array stores elements of similar datatypes.
+    Array provides contigious memory locations.
+    
+    Phases of Array:
+        1. Declare --> int arr[10]
+            i. We have to decide the type of element during the declaration.
+            ii. We have to decide the number of elements as well.
+
+        2. initialize --> a[0] = 1, a[1] = 2 | int arr[5] = {1,2,3,4,5} | for loop {arr[i]=i}
+
+        3. Access --> Update, Search/Fetch
+            a[2] = 10 | for loop { if(a[i]==s)true; }
+
+
+    Advantages:
+
+
+Strings:
+    String is a collection of characters enclosed in double quotes.
+        #include<string>
+
+        Operations:
+            concatination
+            append
+            numbers and strings
+            access string 
+            user input string
+
+        Examples:        
+            string fullName= firtsName.append[lastName];
+            String x,y
+            z = x+y
+            s1.length()
+            s1.size() --> chutiya hai
+            s1[1]
+            s[0] = 'J'; --> possible.
+
+            Input:
+                string s;
+                cin >> s; --> class object globally accessible.
+                getline(cin, s;) --> function using c++.
+
+
+Pointers:
+    1. Null Pointer
+        int *ptr=NULL;
+        {It signals that the pointer is not intended to point to an accessible memory location.}
+        
+    2. Pointer Arithmetic
+        
+
+
+    3. Pointer vs Array
+        int *ptr;
+        int arr[3] = {0,1,2};
+        ptr = &arr[0];
+        ptr++;
+        cout <<*ptr; --> Output : 1
+        arr --> constant pointer
+        
+        Collection of addresses of similar data type
+        int *ptr[4]
+
+    4. Pointer to Pointer
+        *(chain of pointers)
+        int **ptr; --> pointer to a pointer of int datatype
+        ptr = address2;
+
+    5. Return pointer to functions
+    6. Passing pointers to functions
+
+    
+    Questions:
+        pointerAndValue?
+        pointerAndArray?
+        arrayTraversingUsingPointers?
+        arrayOfIntPointer?
+        pointerToPointer?
+
+
+
+
+Functions: 
+    Why do we need functions?
+
+    Advantages
+        1. Code Reuseability
+        2. Conscise Code --> [Easy to read]
+        3. Easy testing
+        4. Less Cohesive --> easy to make changes in a program without changing the structure of the program
+
+    Questions:
+        lessCohesive()?
+        callByValuesAndAddress()?
+            
+        inlineFunction()?
+        recursiveFunction()?
+
+
+    Inline Function:
+        inline int add(int a, int b)
+        {
+            return (a+b)
+        }
+        
+        * c++ compiler is responsiable for substituting the function code at the place of function call
+        * to minimize the switching overhead
+        * to make function execution more efficient
+        * good for small size (logic functions)
+        
+        Restrictions, when not to use inline function:
+            - when using loop
+            - when using switch
+            - when using recursion
+            - large functions : leads to larger executables which significantly imparis performance regardless of the faster execution that 
+                                results form the calling overhead
+            - the function is seldom used
+
+    Recursive function:
+        * if a function calls itself, then theat function is called a recursive function
+        * purpose : to divide the problem into smaller problems till the base condition is reached.
+        
+    Default arugment:
+        
+        int sum(int x, int y, int z=0,int w=0)
+
+        restrictions:
+            parameters with default arguments must be the trailing parameters int the fucntion declaration parameter list
+            error --> int sum(int z=0,int w=0, int x, int y)
+
+            you cannot redifine that argument
+            void f(int a=1, int b=1, int c=1); --> error

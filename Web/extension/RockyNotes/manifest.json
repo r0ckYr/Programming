@@ -1,0 +1,11 @@
+{
+    "name": "Rocky Notes",
+    "version": "1.0.0",
+    "description": "note taking",
+    "manifest_version": 3,
+    "author": "Rocky",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "rocky notes"
+    }
+}

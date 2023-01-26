@@ -1,0 +1,29 @@
+{
+    "name": "screenshiot",
+    "version": "1.0.0",
+    "description": "take screenshiot",
+    "manifest_version": 3,
+    "author": "rocky",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "screenshot"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://www.amazon.in/*", "<all_urls>", "http://*/*", "https://*/*"],
+          "js": ["script.js"]
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "tabs" ,
+        "storage",
+        "unlimitedStorage",
+        "browsingData",
+        "notifications",
+        "http://*/*",
+        "https://*/*",
+        "file://*/*",
+        "<all_urls>"
+    ]
+}
